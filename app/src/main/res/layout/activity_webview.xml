@@ -5,14 +5,19 @@
     android:id="@+id/drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:openDrawer="start"
-    tools:context=".WebViewActivity">
+    android:background="@color/backgroundWebView"
+    tools:context=".WebViewActivity"
+    tools:openDrawer="start">
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navView"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="start"
-        app:menu="@menu/nav_menu"/>
+        android:layout_marginTop="50dp"
+        android:background="@color/backgroundNavView"
+        app:itemRippleColor="@color/purple_700"
+        app:itemTextColor="@color/purple_700"
+        app:menu="@menu/nav_menu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
