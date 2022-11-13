@@ -18,7 +18,7 @@ class WebViewActivity : AppCompatActivity() {
     private val drawer: DrawerLayout by lazy { findViewById(R.id.drawer) }
     private val wvWeb: WebView by lazy { findViewById(R.id.wvWeb) }
 
-    private val mAuth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
+    private val auth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -79,7 +79,7 @@ class WebViewActivity : AppCompatActivity() {
     }
 
     fun logout() {
-        mAuth.signOut()
+        auth.signOut()
         Toast.makeText(this, "Logout is success", Toast.LENGTH_LONG).show()
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
