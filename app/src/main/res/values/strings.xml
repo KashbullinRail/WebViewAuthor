@@ -4,5 +4,10 @@
     <string name="youtube">YouTube</string>
     <string name="stackoverflow">StackOverFlow</string>
     <string name="github">Github</string>
-    <string name="ListWeb">Список сайтов</string>
+    <string name="ListWeb">Site List</string>
+    <string name="input_password">Input Password</string>
+    <string name="create_account">Create account</string>
+    <string name="login">Login</string>
+    <string name="input_login">Input Login</string>
+    <string name="registration">Registration</string>
 </resources>
