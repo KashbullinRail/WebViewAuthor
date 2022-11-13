@@ -5,9 +5,14 @@
     android:id="@+id/drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundWebView"
     tools:context=".WebViewActivity"
     tools:openDrawer="start">
+
+    <WebView
+        android:id="@+id/wvWeb"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundWebView" />
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navView"
@@ -19,5 +24,6 @@
         app:itemRippleColor="@color/purple_700"
         app:itemTextColor="@color/purple_700"
         app:menu="@menu/nav_menu" />
+
 
 </androidx.drawerlayout.widget.DrawerLayout>
