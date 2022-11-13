@@ -8,6 +8,6 @@
     <string name="input_password">Input Password</string>
     <string name="create_account">Create account</string>
     <string name="login">Login</string>
-    <string name="input_login">Input Login</string>
+    <string name="input_email">Input Email</string>
     <string name="registration">Registration</string>
 </resources>

@@ -8,10 +8,10 @@
 
 
     <EditText
-        android:id="@+id/etLoginReg"
+        android:id="@+id/etEmailReg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/input_login"
+        android:hint="@string/input_email"
         android:gravity="center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,9 +24,9 @@
         android:layout_height="wrap_content"
         android:hint="@string/input_password"
         app:boxBackgroundMode="none"
-        app:layout_constraintEnd_toEndOf="@+id/etLoginReg"
-        app:layout_constraintStart_toStartOf="@+id/etLoginReg"
-        app:layout_constraintTop_toBottomOf="@+id/etLoginReg"
+        app:layout_constraintEnd_toEndOf="@+id/etEmailReg"
+        app:layout_constraintStart_toStartOf="@+id/etEmailReg"
+        app:layout_constraintTop_toBottomOf="@+id/etEmailReg"
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
