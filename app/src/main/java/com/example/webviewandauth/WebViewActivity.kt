@@ -1,6 +1,7 @@
 package com.example.webviewandauth
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.webkit.WebView
@@ -9,12 +10,15 @@ import android.widget.Toast
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
 
 class WebViewActivity : AppCompatActivity() {
 
     private val navView: NavigationView by lazy { findViewById(R.id.navView) }
-    private val drawer:DrawerLayout by lazy { findViewById(R.id.drawer) }
-    private val wvWeb:WebView by lazy { findViewById(R.id.wvWeb) }
+    private val drawer: DrawerLayout by lazy { findViewById(R.id.drawer) }
+    private val wvWeb: WebView by lazy { findViewById(R.id.wvWeb) }
+
+    private val mAuth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,19 +30,22 @@ class WebViewActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.google -> {
                     webViewStart(GOOGLE_URL)
-                    toast("Google")
+                    toastWebView("Google")
                 }
                 R.id.youtube -> {
                     webViewStart(YouTube_URL)
-                    toast("YouTube")
+                    toastWebView("YouTube")
                 }
                 R.id.stackoverflow -> {
                     webViewStart(StackOverFlow_URL)
-                    toast("StackOverFlow")
+                    toastWebView("StackOverFlow")
                 }
                 R.id.github -> {
                     webViewStart(GITHUB_URL)
-                    toast("Github")
+                    toastWebView("Github")
+                }
+                R.id.logout -> {
+                    logout()
                 }
             }
             drawer.closeDrawer(GravityCompat.START)
@@ -47,8 +54,13 @@ class WebViewActivity : AppCompatActivity() {
 
     }
 
-    fun toast(text:String){
-        Toast.makeText(this@WebViewActivity, "Загружается сайт $text", Toast.LENGTH_SHORT).show()
+    fun toastWebView(text: String) {
+        Toast.makeText(
+            this@WebViewActivity,
+            "Загружается сайт $text",
+            Toast.LENGTH_SHORT
+        )
+            .show()
     }
 
     @SuppressLint("SetJavaScriptEnabled")
@@ -64,6 +76,13 @@ class WebViewActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         if (wvWeb.canGoBack()) wvWeb.goBack() else super.onBackPressed()
+    }
+
+    fun logout() {
+        mAuth.signOut()
+        Toast.makeText(this, "Logout is success", Toast.LENGTH_LONG).show()
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
     }
 
 }

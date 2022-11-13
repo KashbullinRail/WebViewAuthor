@@ -10,4 +10,6 @@
     <string name="login">Login</string>
     <string name="input_email">Input Email</string>
     <string name="registration">Registration</string>
+    <string name="logout">Logout</string>
+    <string name="logoutNavView">Logout</string>
 </resources>
