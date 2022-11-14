@@ -24,6 +24,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/input_password"
+        app:startIconDrawable="@drawable/ic_baseline_lock_open_24"
+        app:helperText="requred"
+        app:helperTextTextColor="@color/teal_700"
+        app:counterEnabled="true"
+        app:counterMaxLength="16"
+        app:prefixText="+90"
+        app:suffixText="900"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@drawable/ic_baseline_error_24"
+        app:suffixTextColor="@color/teal_700"
+        app:prefixTextColor="@color/teal_700"
         app:boxBackgroundMode="none"
         app:layout_constraintEnd_toEndOf="@+id/etEmail"
         app:layout_constraintStart_toStartOf="@+id/etEmail"
@@ -34,8 +45,8 @@
             android:id="@+id/etPassword"
             android:layout_width="250dp"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:ems="20"
+            android:gravity="start"
+            android:maxLength="16"
             android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>

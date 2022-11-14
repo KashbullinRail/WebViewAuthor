@@ -36,9 +36,8 @@ class LoginActivity : AppCompatActivity() {
         btnNoLogin.setOnClickListener {
             val intent = Intent(this, WebViewActivity::class.java)
             startActivity(intent)
+            finish()
         }
-
-
 
     }
 

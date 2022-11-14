@@ -48,6 +48,7 @@ class RegistrationActivity : AppCompatActivity() {
                         toastReg("Registration success")
                         val intent = Intent(this, LoginActivity::class.java)
                         startActivity(intent)
+                        finish()
                     } else {
                         toastReg("Registration failed")
                     }
