@@ -25,6 +25,13 @@ class RegistrationActivity : AppCompatActivity() {
 
         auth = Firebase.auth
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        val currentUser = auth.currentUser
+
         btnRegistration.setOnClickListener {
 
             if (etEmailReg.text.toString().isEmpty() || etPasswordReg.text.toString().isEmpty()) {
@@ -50,7 +57,6 @@ class RegistrationActivity : AppCompatActivity() {
         }
 
     }
-
 
     fun toastReg(text: String) {
         Toast.makeText(this, "$text", Toast.LENGTH_LONG).show()

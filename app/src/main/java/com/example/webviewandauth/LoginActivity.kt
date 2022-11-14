@@ -17,6 +17,7 @@ class LoginActivity : AppCompatActivity() {
     private val etPassword: EditText by lazy { findViewById(R.id.etPassword) }
     private val btnLogin: Button by lazy { findViewById(R.id.btnLogin) }
     private val btnCreateAccount: Button by lazy { findViewById(R.id.btnCreateAccount) }
+    private val btnNoLogin:Button by lazy { findViewById(R.id.btnNoLogin) }
 
     private lateinit var auth: FirebaseAuth
 
@@ -25,12 +26,26 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         auth = Firebase.auth
-        val currentUser = auth.currentUser
+
 
         btnCreateAccount.setOnClickListener {
             val intent = Intent(this, RegistrationActivity::class.java)
             startActivity(intent)
         }
+
+        btnNoLogin.setOnClickListener {
+            val intent = Intent(this, WebViewActivity::class.java)
+            startActivity(intent)
+        }
+
+
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        val currentUser = auth.currentUser
 
         btnLogin.setOnClickListener {
             if (etEmail.text.toString().isEmpty() || etPassword.text.toString().isEmpty()) {
